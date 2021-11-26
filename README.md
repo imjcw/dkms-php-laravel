@@ -44,13 +44,27 @@ KMS_CIPHERTEXT_BLOB=
 return [
     "keyId" => env("KMS_KEY_ID", ""),
 
-    "protocol"         => "https",
-    "endpoint"         => env("KMS_ENDPOINT", ""),
-    "password"         => env("KMS_PASSWORD", ""),
-    "clientKeyContent" => env("KMS_CLIENT_KEY_CONTENT", ""),
-    "cainfo"           => env("KMS_CAINFO_PATH", ""),
-    "keyId"            => env("KMS_KEY_ID", ""),
-    "ciphertextBlob"   => env("KMS_CIPHERTEXT_BLOB", ""),
+    "default" => "online",
+
+    "drivers" => [
+        "online" => [
+            "protocol"         => "https",
+            "endpoint"         => env("KMS_ENDPOINT", ""),
+            "password"         => env("KMS_PASSWORD", ""),
+            "clientKeyContent" => env("KMS_CLIENT_KEY_CONTENT", ""),
+            "cainfo"           => env("KMS_CAINFO_PATH", ""),
+        ],
+
+        "mail" => [
+            "protocol"         => "https",
+            "endpoint"         => env("KMS_ENDPOINT", ""),
+            "password"         => env("KMS_PASSWORD", ""),
+            "clientKeyContent" => env("KMS_CLIENT_KEY_CONTENT", ""),
+            "cainfo"           => env("KMS_CAINFO_PATH", ""),
+            "keyId"            => env("KMS_KEY_ID", ""),
+            "ciphertextBlob"   => env("KMS_CIPHERTEXT_BLOB", ""),
+        ]
+    ],
 ];
 ```
 
