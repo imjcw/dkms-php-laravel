@@ -1,0 +1,29 @@
+{
+    "name": "talk-lucky/dkms-laravel",
+    "description": "The Aliyun dkms sdk for Laravel(Lumen).",
+    "keywords": [
+        "talk-lucky",
+        "dkms",
+        "aliyun",
+        "Laravel",
+        "Lumen"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marvin",
+            "email": "imjcw@imjcw.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "talk-lucky/encryption": "v1.0.0",
+        "talk-lucky/dkms": "v1.0.0"
+    },
+    "autoload": {
+        "files": [],
+        "psr-4": {
+            "Lucky\\Dkms\\": "src/"
+        }
+    }
+}
