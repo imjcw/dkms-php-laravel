@@ -19,20 +19,6 @@ class DKmsServiceProvider extends ServiceProvider
      */
     protected $defer = false;
 
-    /*
-    * Bootstrap the application service
-    *
-    * @return void
-    */
-    public function boot()
-    {
-        if (is_a($this->app, "\\Laravel\\Lumen\\Application")) {
-            $this->app->configure($this->key);
-        } else {
-            $this->publishes([$this->configPath() => \config_path($this->key . ".php")]);
-        }
-    }
-
     /**
      * Register the service provider.
      *
@@ -40,6 +26,9 @@ class DKmsServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if (is_a($this->app, "\\Laravel\\Lumen\\Application")) {
+            $this->app->configure($this->key);
+        }
         $this->mergeConfigFrom($this->configPath(), $this->key);
 
         $config = \config($this->key);
